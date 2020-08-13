@@ -4,4 +4,32 @@
 AppStream is able to extract details from almost any application executing on a Linux x86_64 system. This repo provides example applications and various resources for use with AppStream.
 
 
+# Go Applications
+Several pre-built applications for Go are available. The source for the examples are also available. All executables have been built with Go 1.14. 
 
+## Hello World
+The go/hello app prints an obligatory "hello world" message. It also perfoms several file I/O operations and then reads from an HTTP server and displays status. 
+
+## Multiple Go Routines
+The app fileThread in go/thread creates 100,000 Go Routines each of which do some file I/O.
+
+## Network
+There are 2 web server example apps.
+You will need to be in the go/net dir in order to run these apps:
+    cd go/net
+
+### HTTP server
+The app go/net/plainServer handles HTTP 1.X requests and responds with a message.
+Check out the source in go/net/plainServer.go for directions on how to use the app. 
+
+### HTTPS server
+The app go/net/tlsServer handles HTTPS 1.X requests and responds with a message.
+Check out the source in go/net/tlsServer.go for directions on how to use the app. 
+
+# Python Applications
+The app python/testssl.py is a basic HTTP server. The app was created for python3.
+Check out the source in python/testssl.py for directions on how to use the app. 
+
+# Node Applications
+The app node/nodehttp.ts is a basic HTTPS server. It will display results from an https request on stdout.
+Check out the source in node/nodehttp.ts for directions on how to use the app. 
