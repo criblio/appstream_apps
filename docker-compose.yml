@@ -1,0 +1,7 @@
+version: '3.5'
+services:
+  scope:
+    build:
+      context: .
+      dockerfile: ./scope/Dockerfile
+    privileged: true    

@@ -43,3 +43,16 @@ Check out the source in python/testssl.py for directions on how to use the app.
 # Node Applications
 The app node/nodehttp.ts is a basic HTTPS server. It will display results from an https request on stdout.
 Check out the source in node/nodehttp.ts for directions on how to use the app. 
+
+# Build Scope
+There is a container build environment that builds everything you need from master.
+
+## Build the Container
+From the appstream_apps directory:
+docker-compose build --build-arg ssh_prv_key="$(cat ~/.ssh/id_rsa)" --build-arg ssh_pub_key="$(cat ~/.ssh/id_rsa.pub)" scope
+
+## Build Scope
+From the appstream_apps directory:
+docker run --attach STDIN --attach STDOUT --interactive --rm -v "$PWD":/scope/lib/linux -v "$PWD/..":/scope/scope -w /scope appstream_apps_scope /scope/scope.sh build
+
+This will put libscope.so and the scope executable in the appstream_apps directory. You can run test apps form there.
