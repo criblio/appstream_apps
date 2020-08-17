@@ -36,17 +36,21 @@ You will need to be in the go/net dir in order to run these apps:
 
 ### HTTP server
 The app go/net/plainServer handles HTTP 1.X requests and responds with a message.
+The server app uses port 80. In some environments it must be executed with root permissions. It's easiest to add the setuid bit to the file so that you don't need to use sudo.
 Execute the app:
       cd go/net
-      ./serverPlain
+      sudo chmod uga+s ./plainServer
+      ./plainServer
 
 Ping the server and retreive the test string:
      curl http://localhost/hello
 
 ### HTTPS server
 The app go/net/tlsServer handles HTTPS 1.X requests and responds with a message.
+The server app uses port 443. In some environments it must be executed with root permissions. It's easiest to add the setuid bit to the file so that you don't need to use sudo.
 Execute the app:
     cd go/net
+    sudo chmod uga+s ./tlsServer
     ./tlsServer
 
 Ping the server and retreive the test string:
