@@ -5,6 +5,11 @@ AppStream is able to extract details from almost any application executing on a 
 
 This is initally intended for internal Cribl use. That can change. For now, the instructions assume internal use. If you have questions about using some of this let us know; cribl-community.slack.com 
 
+# Pull the objects from CDN
+Until the lib and executable get are added to the cribl distro, or if you need to get the latest versions, they are availble from CDN:
+http://cdn.cribl.io/dl/scope/latest/linux/libscope.so
+http://cdn.cribl.io/dl/scope/latest/linux/scope
+
 # Go Applications
 Several pre-built applications for Go are available. The source for the examples are also available. All executables have been built with Go 1.14.
 
