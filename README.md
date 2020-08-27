@@ -7,8 +7,8 @@ This is initally intended for internal Cribl use. That can change. For now, the 
 
 # Pull the objects from CDN
 Until the lib and executable are added to the cribl distro, or if you need to get the latest versions, they are availble from CDN:
-http://cdn.cribl.io/dl/scope/latest/linux/libscope.so
-http://cdn.cribl.io/dl/scope/latest/linux/scope
+      http://cdn.cribl.io/dl/scope/latest/linux/libscope.so
+      http://cdn.cribl.io/dl/scope/latest/linux/scope
 
 Note that libscope.so is no longer strictly required. All you need is the scope executable. The library is available for a number of scenarios, as needed.
 
@@ -16,8 +16,9 @@ Note that libscope.so is no longer strictly required. All you need is the scope 
 It is no longer required to set any environment variables in order to use AppStream. In fact, when using the scope executable (or 'cribl scope'), you need to ensure that LD_PRELOAD is not set. 
 
 There are a number of env vars that can be set to manage configuration. All are optional. Refer to the help text emitted by executing the library libscope.so from the command line. This will display all of the configuration options:
+```console
          libscope.so configuration
-
+```
 For example, in order to enable all events add the following environment variable:
     export SCOPE_EVENT_METRIC=true
 
