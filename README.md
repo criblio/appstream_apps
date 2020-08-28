@@ -28,6 +28,14 @@ For example, in order to enable all events add the following environment variabl
 
 By default all events are sent over a TCP conenction on port 9109.
 
+# Any Native Linux Application
+You can extract details from any Linux app using the scope executable. For example;
+```console
+    scope /usr/bin/ps -ef
+```
+
+Note that, for example, “scope top” doesn’t work, but “scope /usr/bin/top” does. You need to provide the full path name to your application.
+
 # Go Applications
 Several pre-built applications for Go are available. The source for the examples are also available. All executables have been built with Go 1.14.
 
