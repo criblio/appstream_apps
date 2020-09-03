@@ -51,6 +51,7 @@ SCOPE_EVENT_LOGFILE_NAME=*.log
 ### Extract all console data as events
 ```console
     SCOPE_EVENT_CONSOLE=true
+```
 Extract only stderr data
 ```console
     SCOPE_EVENT_CONSOLE_NAME=stderr
