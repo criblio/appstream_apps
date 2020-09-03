@@ -27,7 +27,38 @@ For example, in order to enable all events add the following environment variabl
 ```
 
 By default all events are sent over a TCP conenction on port 9109.
-
+## Examples
+### Extract HTTP headers as events
+```console
+    SCOPE_EVENT_HTTP=true
+```
+### Extract all metrics as events
+```console
+    SCOPE_EVENT_METRIC=true
+```
+Extract only network metrics as events
+```console
+    SCOPE_EVENT_HTTP_NAME=net.*
+```
+### Extract log data from files as events
+```console
+    SCOPE_EVENT_LOGFILE=true
+```
+Extract file data from specific files
+```console
+SCOPE_EVENT_LOGFILE_NAME=*.log
+```
+### Extract all console data as events
+```console
+    SCOPE_EVENT_CONSOLE=true
+Extract only stderr data
+```console
+    SCOPE_EVENT_CONSOLE_NAME=stderr
+```
+### Change the destination of events from TCP port 9109 to a file
+```console
+    SCOPE_EVENT_DEST=file:///tmp/events.log
+```
 # Any Native Linux Application
 You can extract details from any Linux app using the scope executable. For example;
 ```console
@@ -69,11 +100,11 @@ The server app uses port 80. In some environments it must be executed with root 
 Execute the app:
 ```console
       cd go/net
-      scope ./plainServer
+      scope ./plainServer 80
 ```
-You may need to use sudo as the server binds to port 80:
+You may need to use sudo as the server binds to port 80 (the -E causes sudo to use the existing env vars):
 ```console
-    sudo scope ./plainserver
+    sudo -E scope ./plainserver 80
 ```
 
 Ping the server and retreive the test string:
@@ -98,12 +129,12 @@ Create keys:
 
 Run the web server:
 ```console
-     scope ./tlsServer
+     scope ./tlsServer 4430
 ```
 
 You may need to use sudo as the server binds to port 443:
 ```console
-     sudo scope ./tlsServer
+     sudo -E scope ./tlsServer 4430
 ```
 
 Ping the server and retreive the test string:
