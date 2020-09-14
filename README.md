@@ -161,6 +161,15 @@ Execute the app:
         scope node nodehttp.ts
 ```
 
+#PHP Applications
+The app php/sslclient.php is an HTTPs client. It simply does an https get from cribl.io.
+
+```console
+        cd node
+        scope php sslclient.php 
+```
+
+
 # Build Scope
 There is a container build environment that builds everything you need from master.
 
